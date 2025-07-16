@@ -178,3 +178,11 @@ Dans cette visualisation, nous partirons donc d’une visualisation globale, pou
 -	Vue Gardiens
 Chaque page comportera un tableau récapitulatif, qui permettra d’afficher les statistiques essentielles des joueurs dans la catégorie de poste. Et si un joueur est sélectionné sur les différents graphiques, le tableau permettra de visualiser toutes ses statistiques en simultané.
 
+
+
+
+
+
+
+
+##CODE
