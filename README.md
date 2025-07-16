@@ -10,7 +10,7 @@ demo 85s https://www.youtube.com/watch?v=ClSAfk3en2Y
 demo with explanations https://www.youtube.com/watch?v=CJAY9N-eMJ4
 
 
-Contexte et objectifs 
+##Contexte et objectifs 
 Mon petit gazon (MPG) est un jeu de fantasy football créé en 2011. Il se joue avec six ligues européennes. L’objectif est de remporter un championnat appelé ligue en construisant son équipe via un mercato à enchères en début de partie. Lors de chaque journée de football réelle, les évènements se déroulant dans le match réel seront répercutés sur les joueurs ajoutés (cartons, buts, fautes, blessures etc). Chaque joueur sera noté et le match MPG sera remporté par l’équipe ayant les joueurs avec la meilleure note de la journée.
 
 L’objectif du projet est de faire une analyse de données afin de répondre à  la problématique suivante :
@@ -20,17 +20,17 @@ Cette problématique a été décidée car de nombreux joueurs MPG achètent les
 Nous ne nous concentrerons donc pas sur les meilleurs joueurs les plus connus, mais des joueurs avec une faible visibilité mais à bon rendement et rapport qualité prix.
 L’objectif est de déterminé un top 5 des joueurs par poste qui puissent être recommandés aux joueurs MPG lors de leur mercato en début de partie.
 
-Concernant mon degré d’expertise sur cette problématique ; le football est un sport que j’affectionne particulièrement depuis ma tendre enfance, que j’ai pratiqué et dont je suis les nouvelles régulièrement. De plus, j’ai de l’expérience sur ce jeu, ayant déjà joué à ce dernier avec mes amis. Donc je connais déjà son fonctionnement. Pour résumer, cet univers est familier.
 
 
 
-Cadre
+
+##Cadre
 
 Le dataset utilisé est celui des stats officielles MPG https://www.mpgstats.fr/ pour la ligue « Premier League ». Les données sont téléchargeables librement et directement sous le format xls. Deux tableaux sont disponibles (Nouvelle Version et Ancienne Version). Nous avons choisi de télécharger les données de l’ancienne version car ce dernier est plus complet et contient plus de données. Afin d’avoir des statistiques pertinentes qui puissent dégager une meilleure tendance, les stats de la saison uniquement.
 En termes de volumétrie, le fichier contient 124 colonnes et 532 lignes pour 531 joueurs.
 Pour le data cleaning et processing, le fichier sera converti en csv avant utilisation. Ce format étant mieux adapté pour les actions qui seront réalisées dessus.
 
-Pertinence 
+##Pertinence 
 Nous pouvons observer que beaucoup de colonnes sont incomplètes et aussi de nombreuses données ne sont pas pertinentes pour l’analyse. Dans un premier temps, il faudra alors décider quelles sont les données qui seront utiles pour les analyses et pour répondre à notre problématique. Nous avons décidé de garder les 28 colonnes suivantes :
 -	Joueur
 -	Poste
@@ -63,7 +63,7 @@ Nous pouvons observer que beaucoup de colonnes sont incomplètes et aussi de nom
 
 Le football étant un sport où de nombreuses statistiques existent, il faut donc faire un choix qui nous permettra de faire notre analyse de la manière dont nous le voulons. Il faut également prendre en compte les données spécifiques à des postes précis. Notre jeu de données contient donc des statistiques globales (temps de jeu, etc) mais aussi certaines qui sont spécifiques à des postes précis (% de duel gagnés, interceptions, tacles, dégagements etc). Une des variables à prendre en compte pour le traitement des données est aussi le poste. 
 
-Pré-processing
+##Pré-processing
 Il fallait également prendre en compte les colonnes avec des valeurs nulles. En effet, de nombreuses colonnes avaient des données nulles. Ceci dépendant de nombreux facteurs (poste, titularisation, joueurs non disponibles). Mais il faut également prendre en compte le fait que tous les joueurs listés ne jouent pas. En effet il y’ a seulement 11 titulaires et 5 changements. Ce qui fait 16 joueurs par équipe et donc 320 joueurs au maximum par journée. En laissant donc 211 listés qui ne joueront potentiellement pas.
 
 Pour traiter les valeurs nulles ou manquantes, remplacer ces valeurs par des moyennes ou médiane n’a pas vraiment de sens car nous sommes sur des performances individuelles. La méthode choisie est donc de les remplacer par 0. Ce qui est pertinent car un 0 permettra de soit communiquer une performance mauvaise ou inexistante.
@@ -161,7 +161,7 @@ Pour en revenir à notre problématique, cela nous permet de comprendre que le p
 
 
 
-Visualisation power Bi
+##isualisation power Bi
 
 Après avoir déterminé que le prix d’un joueur ne reflète pas sa performance. Nous allons désormais créer un Dashboard de visualisation avec l’outil Power BI, qui nous permettra de recommander le top 5 des joueurs par poste.
 
