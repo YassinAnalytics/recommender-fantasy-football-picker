@@ -39,7 +39,7 @@ Before processing, the .xls file was converted into a .csv format, which is bett
 
 Please note that the dataset is in French. that's why some wording are in french. I translated into english for the analysis etc but the analysis was done initially in french.
 
-🧠 Relevance and Feature Selection
+## Relevance and Feature Selection
 
 We observed that many columns were either incomplete or irrelevant for the analysis. Therefore, the first step was to decide which variables would be useful to address our research question.
 
@@ -74,7 +74,7 @@ We selected the following 28 columns:
 - Ballon perdu (Balls Lost)
 - Grosse occasion manquée (Big Missed Chances)
 
-⚽ Contextual Considerations
+## Contextual Considerations
 
 Football is a sport rich in statistical data, so it was important to select features aligned with our analytical goals.
 
@@ -83,7 +83,7 @@ One of the key variables taken into account for our filtering and analysis is th
 
 
 
-##Pre-processing
+## Pre-processing
 We also had to account for columns containing null values.
 Many columns had missing data, due to various factors such as player position, starting status, or player availability.
 It's also important to consider that not all listed players actually play. In each real matchday, there are only 11 starters and 5 substitutes, meaning a maximum of 16 players per team, or 320 active players total per matchday.
@@ -240,41 +240,54 @@ With these matrixes by position, we have a clear view
 
 Startting from this, we calculate a score baased on the best metrics for each posiiton that will allow to rank the players
 
+
 <img width="709" height="450" alt="image" src="https://github.com/user-attachments/assets/3bbb7cd5-606b-4c52-9a13-61f6c0e616a5" />
+
 
 
 <img width="945" height="287" alt="image" src="https://github.com/user-attachments/assets/2fee7e9a-a6e6-4d3e-aa53-8d3a4df92832" />
 
+
 <img width="945" height="281" alt="image" src="https://github.com/user-attachments/assets/edb814e3-91b9-45db-ac4f-b5ef52521421" />
 
 
+
 <img width="945" height="258" alt="image" src="https://github.com/user-attachments/assets/e5e0eca2-eb82-45ea-b642-af22bf09e3f3" />
+
 
 
 <img width="945" height="263" alt="image" src="https://github.com/user-attachments/assets/34fad9c6-b6c8-42a3-96e5-a4644d8e5fdb" />
 
 
 
+
 <img width="945" height="240" alt="image" src="https://github.com/user-attachments/assets/9cea720d-145e-4c70-a0ae-8b5e21927e3d" />
 
 
+
 <img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/db843df9-b9dd-415c-bfb6-30650ef9aa1f" />
+
 
 Apres fitrage
 <img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/c84b19c7-ceb0-4810-bba5-1dc088e2f10a" />
 
 
 
+
 <img width="945" height="239" alt="image" src="https://github.com/user-attachments/assets/d666ee52-a161-4e08-8880-ef9cebd1eec9" />
+
 
 
 <img width="945" height="255" alt="image" src="https://github.com/user-attachments/assets/afc50a10-8d42-4396-a55a-0fe98964dd75" />
 
 
+
 <img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/8d9ca7e7-c685-427c-9bef-f635d88dbbf3" />
 
 
+
 <img width="945" height="263" alt="image" src="https://github.com/user-attachments/assets/575d8740-acaa-48c2-94fb-9fb594c92514" />
+
 
 
 
@@ -286,7 +299,8 @@ Apres fitrage
 
 
 
-##visualisation power Bi
+
+## Visualisation power Bi
 
 After determining that a player’s price does not reflect their actual performance, we will now create a visual dashboard using Power BI to recommend the top 5 players by position.
 
