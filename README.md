@@ -11,14 +11,21 @@ demo with explanations https://www.youtube.com/watch?v=CJAY9N-eMJ4
 
 
 ##Contexte et objectifs 
-Mon petit gazon (MPG) est un jeu de fantasy football créé en 2011. Il se joue avec six ligues européennes. L’objectif est de remporter un championnat appelé ligue en construisant son équipe via un mercato à enchères en début de partie. Lors de chaque journée de football réelle, les évènements se déroulant dans le match réel seront répercutés sur les joueurs ajoutés (cartons, buts, fautes, blessures etc). Chaque joueur sera noté et le match MPG sera remporté par l’équipe ayant les joueurs avec la meilleure note de la journée.
+Mon Petit Gazon (MPG) is a fantasy football game created in 2011. It is played using six European leagues. The goal is to win a championship, called a "league", by building your team through an auction-based transfer market at the beginning of the game.
+During each real-life football matchday, events that happen in actual games (cards, goals, fouls, injuries, etc.) are reflected in the players' performances. Each player receives a rating, and the MPG match is won by the team whose players received the best ratings that day.
+🎯 Project Objective
 
-L’objectif du projet est de faire une analyse de données afin de répondre à  la problématique suivante :
-"Quels sont les joueurs sous-cotés offrant un bon rapport qualité/prix en fonction de leurs performances et de leur coût ?"
-Pourquoi cette problématique ? 
-Cette problématique a été décidée car de nombreux joueurs MPG achètent les mêmes joueurs et dépensent une grosse partie de leur budget mercato sur ces derniers. Mais il doit y avoir de nombreux joueurs moins connus ou cotés qui auraient un meilleur rapport qualité/prix/performance. Sans prendre en compte les formations d’équipes possibles étant donné que cela dépend de la stratégie de chaque joueur.
-Nous ne nous concentrerons donc pas sur les meilleurs joueurs les plus connus, mais des joueurs avec une faible visibilité mais à bon rendement et rapport qualité prix.
-L’objectif est de déterminé un top 5 des joueurs par poste qui puissent être recommandés aux joueurs MPG lors de leur mercato en début de partie.
+The goal of this project is to conduct a data analysis to answer the following question:
+"Which underrated players offer the best value for money based on their performance and cost?"
+❓ Why this question?
+
+This topic was chosen because many MPG players tend to buy the same popular players and spend a large portion of their transfer budget on them. However, there are likely many lesser-known or less-hyped players who offer a better price/performance ratio.
+
+This analysis does not take team formations into account, as they depend on each player's strategy.
+🧠 Focus of the study
+
+We will not focus on the most famous or high-profile players, but rather on low-visibility players with strong performance and excellent value.
+The objective is to determine a top 5 players per position that could be recommended to MPG players during the transfer market at the start of the game.
 
 
 
@@ -26,141 +33,239 @@ L’objectif est de déterminé un top 5 des joueurs par poste qui puissent êtr
 
 ##Cadre
 
-Le dataset utilisé est celui des stats officielles MPG https://www.mpgstats.fr/ pour la ligue « Premier League ». Les données sont téléchargeables librement et directement sous le format xls. Deux tableaux sont disponibles (Nouvelle Version et Ancienne Version). Nous avons choisi de télécharger les données de l’ancienne version car ce dernier est plus complet et contient plus de données. Afin d’avoir des statistiques pertinentes qui puissent dégager une meilleure tendance, les stats de la saison uniquement.
-En termes de volumétrie, le fichier contient 124 colonnes et 532 lignes pour 531 joueurs.
-Pour le data cleaning et processing, le fichier sera converti en csv avant utilisation. Ce format étant mieux adapté pour les actions qui seront réalisées dessus.
+The dataset used comes from the official MPG statistics website: https://www.mpgstats.fr/, specifically for the Premier League.
+The data is freely downloadable in .xls format. Two versions of the dataset are available (“New Version” and “Old Version”). We chose the Old Version because it is more complete and contains a wider range of data.
 
-##Pertinence 
-Nous pouvons observer que beaucoup de colonnes sont incomplètes et aussi de nombreuses données ne sont pas pertinentes pour l’analyse. Dans un premier temps, il faudra alors décider quelles sont les données qui seront utiles pour les analyses et pour répondre à notre problématique. Nous avons décidé de garder les 28 colonnes suivantes :
--	Joueur
--	Poste
--	Cote
--	Var cote
--	Enchère moyenne
--	% achat
--	% achat tour 1
--	Nombre de matchs
--	But
--	% titularisation
--	Temps (de jeu en minutes)
--	Temps moyen
--	Minute/But
--	Prix/but
--	But/Peno
--	Passes décisives
--	Occasions créées
--	Tirs
--	Tirs cadrés
--	Corner gagné
--	Ballons
--	Interceptions
--	Tacles
--	%Duel (gagnés)
--	Fautes
--	Dégagements
--	Ballon perdu
--	Grosse occasion manquée
+To ensure relevant statistics and more meaningful trends, only the current season’s data was selected.
 
-Le football étant un sport où de nombreuses statistiques existent, il faut donc faire un choix qui nous permettra de faire notre analyse de la manière dont nous le voulons. Il faut également prendre en compte les données spécifiques à des postes précis. Notre jeu de données contient donc des statistiques globales (temps de jeu, etc) mais aussi certaines qui sont spécifiques à des postes précis (% de duel gagnés, interceptions, tacles, dégagements etc). Une des variables à prendre en compte pour le traitement des données est aussi le poste. 
+In terms of volume, the file contains 124 columns and 532 rows, corresponding to 531 players.
+
+Before processing, the .xls file was converted into a .csv format, which is better suited for the operations and analyses to be performed.
+🧠 Relevance and Feature Selection
+
+We observed that many columns were either incomplete or irrelevant for the analysis. Therefore, the first step was to decide which variables would be useful to address our research question.
+
+We selected the following 28 columns:
+
+    Joueur (Player)
+
+    Poste (Position)
+
+    Cote (Rating)
+
+    Var cote (Rating Change)
+
+    Enchère moyenne (Average Bid)
+
+    % achat (% Purchased)
+
+    % achat tour 1 (% Purchased Round 1)
+
+    Nombre de matchs (Matches Played)
+
+    But (Goals)
+
+    % titularisation (% Started)
+
+    Temps (Minutes Played)
+
+    Temps moyen (Average Minutes)
+
+    Minute/But (Min per Goal)
+
+    Prix/but (Price per Goal)
+
+    But/Peno (Goals per Penalty)
+
+    Passes décisives (Assists)
+
+    Occasions créées (Chances Created)
+
+    Tirs (Shots)
+
+    Tirs cadrés (Shots on Target)
+
+    Corner gagné (Corners Won)
+
+    Ballons (Touches)
+
+    Interceptions
+
+    Tacles (Tackles)
+
+    %Duel gagnés (% Duels Won)
+
+    Fautes (Fouls)
+
+    Dégagements (Clearances)
+
+    Ballon perdu (Balls Lost)
+
+    Grosse occasion manquée (Big Missed Chances)
+
+⚽ Contextual Considerations
+
+Football is a sport rich in statistical data, so it was important to select features aligned with our analytical goals.
+
+Some statistics are general (e.g., minutes played), while others are position-specific (e.g., duels won, interceptions, tackles, clearances).
+One of the key variables taken into account for our filtering and analysis is the player’s position, which helps contextualize the relevance of each metric.
+
+
 
 ##Pré-processing
-Il fallait également prendre en compte les colonnes avec des valeurs nulles. En effet, de nombreuses colonnes avaient des données nulles. Ceci dépendant de nombreux facteurs (poste, titularisation, joueurs non disponibles). Mais il faut également prendre en compte le fait que tous les joueurs listés ne jouent pas. En effet il y’ a seulement 11 titulaires et 5 changements. Ce qui fait 16 joueurs par équipe et donc 320 joueurs au maximum par journée. En laissant donc 211 listés qui ne joueront potentiellement pas.
+We also had to account for columns containing null values.
+Many columns had missing data, due to various factors such as player position, starting status, or player availability.
+It's also important to consider that not all listed players actually play. In each real matchday, there are only 11 starters and 5 substitutes, meaning a maximum of 16 players per team, or 320 active players total per matchday.
+This leaves over 200 listed players who may not feature in the game at all.
 
-Pour traiter les valeurs nulles ou manquantes, remplacer ces valeurs par des moyennes ou médiane n’a pas vraiment de sens car nous sommes sur des performances individuelles. La méthode choisie est donc de les remplacer par 0. Ce qui est pertinent car un 0 permettra de soit communiquer une performance mauvaise ou inexistante.
-Ensuite il a fallu procéder à la vérification du type de variable et au changement de certaines d’entre elles afin que les analyses puissent être faites correctement. Une fois cela effectué, une dernière vérification du type de variables et du nombre de valeurs nulles ou manquantes est faite. Nous avons pu ensuite procéder à l’analyse des données.
-A noter que le traitement des données s’est fait à partir du fichier original mais qu’une autre DataFrame a été créée afin de garder les données voulues et modifier afin de conserver le fichier initial en cas de besoin.
+Replacing missing values with a mean or median would not be relevant here, since we are analyzing individual player performance.
+Instead, we chose to replace all missing values with 0, which is meaningful in this context: a 0 either indicates no participation or a very poor performance.
+
+We then proceeded to check and adjust the data types to ensure the variables were suitable for analysis.
+A final validation was done to verify the types and to confirm that no missing values remained.
+
+Finally, all processing was done using a new DataFrame, created from the original dataset.
+This allowed us to preserve the original file and work independently on a cleaned and filtered version.
 
 
 ##Visualisations et statistiques
 
-Distribution des données 
-En termes de distribution des données, il est intéressant d’analyser tout d’abord la répartition des prix par poste avec des boites à moustaches.
+In terms of data distribution, it is first interesting to analyze the distribution of player prices by position using boxplots.
+
 
 <img width="945" height="563" alt="image" src="https://github.com/user-attachments/assets/eee875e2-fe34-4d79-b7c4-f62e4f6f43a7" />
 
+We observe that player prices are unevenly distributed across positions.
+Strikers show the widest price range — while most have similar values, a few outliers stand out with extremely high prices, but this concerns only a small number of players.
 
-Nous pouvons observer que la répartition des prix par poste est inégale. Les attaquants sont ceux ayant les plus gros écarts. Pour la majorité d’entre eux, les prix sont similaires mais nous pouvons constater quelques valeurs aberrantes qui atteignent des extrêmes pour un très faible nombre de joueurs. Nous pouvons observer une tendance de répartition similaire pour les milieux offensifs. Toutefois avec des écarts moins conséquents. Concernant la défense, nous pouvons observer des écarts plus conséquents pour les centraux que pour les latéraux. Les milieux défensifs et défenseurs centraux sont ceux qui coutent le plus cher.
-Les gardiens quant à eux sont ceux qui coutent le moins cher et avec le moins d’écart. Ceci peut s’expliquer que peu de gardiens soient nécessaires à l’achat, ce qui limite grandement leur coût. 
-Il semblerait qu’en termes de stratégie, les joueurs MPG se basent surtout sur les milieux et les défenseurs. Ceci est également plus logique car en termes de formation, généralement les équipes sont constituées de plus de milieux et de défenseurs.
+A similar trend is seen among attacking midfielders, though the disparities are less extreme.
 
-Deux autres variables à étudier sont le rapport prix/ performance avec un graphique de nuage de points.
-•	Rapport prix/performance :
+As for defenders, central defenders tend to show more variation in price compared to full-backs.
+Overall, defensive midfielders and central defenders are the most expensive players in their category.
+
+Goalkeepers, on the other hand, are the cheapest and show the least price variation.
+This may be due to the fact that very few goalkeepers are needed in a team, which drives prices down.
+
+It appears that, in terms of strategy, MPG players tend to invest more heavily in midfielders and defenders.
+This makes sense, since most formations typically include a higher number of midfielders and defenders compared to strikers or goalkeepers.
+
+Two other key variables worth analyzing are the relationship between price and performance, which we will visualize using scatter plots:
+- Price vs. Performance ratio:
 
 <img width="945" height="563" alt="image" src="https://github.com/user-attachments/assets/352a4abc-9e0f-4891-8ac2-77eee0069876" />
 
  
 
-Concernant ce rapport entre variable, nous pouvons observer que certains joueurs se démarquent par leur prix élevé. Ces derniers sont tous attaquants, mais qu’en terme de performance, elle est moyenne/faible.
-Nous pouvons observer que de nombreux joueurs, tous postes confondus, ont un prix faible mais avec de bonnes performances globales. Cela s’applique surtout aux gardiens, défenseurs, quelques milieux et quelques attaquants. Ceci confirme bien que notre problématique est pertinente et qu’il n’est pas nécessaire d’acheter des joueurs extrêmement chers, pour que ces derniers soient performants.
+When analyzing the relationship between these two variables, we can observe that some players stand out due to their high price — these are mostly strikers, but in many cases, their performance is only average or even below average.
 
-Une autre variable intéressante à étudier est celle du rapport performance globale par poste avec une représentation sous la forme de boite à moustache.
+On the other hand, many players across all positions have relatively low prices yet deliver strong overall performance.
+This is especially true for goalkeepers, defenders, and some midfielders and strikers.
 
-•	Performance globale par poste :
+These observations confirm the relevance of our research question:
+
+ It is not necessary to invest in the most expensive players to achieve strong in-game performance.
+Another interesting variable to analyze is overall performance by position, which will be visualized using boxplots to highlight distributions and trends.
+
+
+•	Gloable performance globale by position :
 
  
-Nous pouvons observer que la performance par poste est très hétérogène pour tous les postes. Les attaquants ont le moins d’écart de performances mais nous pouvons observer quelques extrêmes. Ceci est similaire pour les milieux mais avec des écarts légèrement plus élevés. Pour les défenseurs les écarts sont beaucoup plus grands. Mais le poste ayant les écarts les plus grand est le poste de gardien. Ce qui est normal puisque la forme du gardien influe grandement sur le match mais également que beaucoup moins de gardiens sont utilisés. Donc ces statistiques sont faites pour un faible nombre de gardiens.
-Maintenant que nous connaissons les écarts en termes de performance par poste, il serait intéressant d’approfondir et d’évaluer la variable de performance avec le temps de jeu avec un graphique de nuage de points.
+We can observe that performance varies widely across all positions.
 
+Strikers show the least performance variation, although a few outliers are present.
 
+Midfielders show a similar distribution but with slightly higher variation.
+
+Defenders, however, display a much wider range of performances.
+
+The most significant variation is seen in goalkeepers, which is expected — goalkeeper performance has a strong impact on a match, and fewer goalkeepers are used, meaning the stats are based on a smaller sample size.
+
+    
+Now that we’ve analyzed performance distribution by position, it would be relevant to deepen the analysis by exploring the relationship between performance and playing time, using a scatter plot.
 
 
 <img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/fba25312-6e0d-46ad-84c3-1c14185e05c1" />
 
 
 
-•	Temps de jeu/Performance : 
+•	PLaying time vs erformance : 
 
 <img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/b31f78dd-1ac5-42a1-99ee-009128e2a1c1" />
 
 
-Nous pouvons observer que le temps de jeu et la performance ne sont pas forcément corrélés. En effet, la tendance est que plus les joueurs jouent et plus ils ont une performance globale croissante. Mais cela dépend des postes. En effet, il faut prendre également en compte, car un remplaçant ayant peu de temps de jeu, peut tout de même avoir une performance très élevée. Car de ce que nous pouvoir voir, c’est que très peu de joueurs jouant beaucoup, ont une performance supérieure à la moyenne des autres. Nous pouvons également observer que les joueurs les plus performants ne sont pas forcément les attaquants mais plutôt les milieux ou défenseurs. En restant sur la performance, il serait intéressant d’étudier l’impact décisif d’un joueur en fonction de son prix. Ceci sera fait en comparant le nombres de buts et de passes décisives en rapport avec le prix d’achat dans un autre graphique nuage de points.
+We can observe that playing time and performance are not always correlated.
+While the general trend suggests that more minutes played often lead to slightly better overall performance, this varies significantly depending on the player’s position.
+
+For example, a substitute with limited minutes can still have a very high performance level, showing strong impact during short appearances.
+From what we can see, very few players with high playing time actually outperform the average, and the most efficient players are not necessarily strikers, but often midfielders or defenders.
+
+To further investigate performance, we will analyze a player’s decisive impact in relation to their price.
+This will be done by comparing the number of goals and assists against the average auction price in a scatter plot, to identify the most cost-effective impactful players.
 
 
 
-
-
-•	Rapport buts/passes décisives et prix :
+•	Goal/assist vs price :
 
 <img width="945" height="566" alt="image" src="https://github.com/user-attachments/assets/abd436e9-2781-4ffa-aa1c-bf53defcb84b" />
 
 
-Pour ces variables, la tendance est très claire. Les joueurs les plus décisifs sont des attaquants et milieux offensifs cumulent le plus de buts et de passes décisives. Quelques attaquants se distinguent de par leur prix élevé. Toutefois, un grand nombre de joueurs ayant de bonnes stats ont un prix bas. La conclusion que nous pouvons en tirer et que le rapport efficacité/prix n’est pas corrélé. Nous pouvons voir également qu’un certain nombre de défenseurs sont présents dans les meilleurs buteurs/passeurs. Il serait également intéressant d’observer leur efficacité défensive en fonction de leur prix dans un graphique nuage de points.
+The most decisive players in terms of goals and assists are predominantly strikers and attacking midfielders.
+
+Some strikers stand out with very high prices, but there is also a large number of players with strong stats and relatively low prices.
+This suggests that efficiency and price are not strongly correlated — a high price does not necessarily mean better impact.
+
+Interestingly, several defenders appear among the top scorers and assist providers.
+This raises the question of their defensive efficiency relative to their price, which would be worth exploring further using another scatter plot comparing defensive stats vs. price.
 
 
 
-
-
-
-
-
-
-
-•	Rapport interceptions/prix :
+•	Interceptions/price :
 
 <img width="945" height="572" alt="image" src="https://github.com/user-attachments/assets/4b842c6d-d841-4458-a806-b38e713a6de2" />
+Once again, the emerging trend is that a defensive player’s price is not correlated with their defensive performance.
+We can observe many players with relatively low prices who record a high number of interceptions, regardless of whether they are center-backs or full-backs.
+
+This further supports the pattern observed in the previous charts:
+
+ Price is not strongly correlated with performance.
+
+To validate this observation, we will now create a correlation matrix to quantify the relationships between player price and various performance metrics.
 
 
-Là encore, la tendance qui est dégagée est que le prix d’un joueur défensif n’est pas corrélé avec ses prestations défensives. En effet nous pouvons observer que de nombreux joueurs ont un prix relativement faible mais un grand nombre d’interceptions. Et cela indépendamment qu’ils soient centraux ou latéraux.
-Cela confirme la tendance que nous avons observée sur les graphiques précédents étant que le prix n’est pas fortement corrélé avec la performance.
-
-Pour vérifier cela, nous allons faire une matrice de corrélation.
 
 
 
-
-
-
-
-•	Matrice de corrélation :
+•	Correlation matrix:
 
 <img width="945" height="842" alt="image" src="https://github.com/user-attachments/assets/14a2cf56-aeac-42ff-ba64-39bfcf624808" />
 
-Cette matrice est très intéressante à observer car il s’en dégage qu’au final très peu de variables sont corrélées entre elles. Les variables prix et performances ne sont pas corrélées significativement.  Beaucoup de variables ne sont pas corrélées ou ont des corrélations négatives. 
-Pour les corrélations positives, cela concerne surtout les statistiques quantitatives comme les interceptions avec le temps, le nombre de duels remportés qui impacte la performance globale, le temps de jeu qui influe sur le nombre de buts, de passes décisives. Ce qui est normal car plus un joueur joue, plus ses statistiques seront élevées.
-Pour en revenir à notre problématique, cela nous permet de comprendre que le prix d’un joueur n’est pas corrélé avec sa performance. Donc de nombreux joueurs chers sont au final moins performants que des joueurs moins onéreux. L’objectif est donc de faire un top 5 des joueurs par poste à recommander aux joueurs MPG. Afin que ces derniers puissent faire un mercato plus stratégique, moins onéreux, ou leur proposer des alternatives si les joueurs les plus performants ou joueurs stars sont perdus aux enchères.
+This matrix provides interesting insights: overall, very few variables are strongly correlated with each other.
+In particular, there is no significant correlation between player price and performance.
+Many variables show either weak or even negative correlations.
+
+As for positive correlations, they mostly concern quantitative statistics — for example:
+
+Interceptions and minutes played
+
+Duels won, which contribute to overall performance
+
+Playing time, which naturally affects the number of goals and assists
+
+This is expected: the more a player plays, the more likely they are to accumulate stats.
+
+These findings support our main hypothesis:
+
+  A player's price is not a reliable indicator of their actual performance.
+  Many expensive players underperform compared to cheaper alternatives.
+
+The final objective is to build a Top 5 list of players per position, to be recommended to MPG users.
+This list can help users make more strategic, cost-effective decisions during the transfer market — especially in cases where the best-known or highest-rated players are lost in early bidding rounds.
+
 
 <img width="945" height="648" alt="image" src="https://github.com/user-attachments/assets/8047ae68-8176-47a0-bd79-717eb0d2df17" />
 
+
+With these matrixes by position, we have a clear view
 
 Startting from this, we calculate a score baased on the best metrics for each posiiton that will allow to rank the players
 
@@ -210,27 +315,37 @@ Apres fitrage
 
 
 
-##isualisation power Bi
+##visualisation power Bi
 
-Après avoir déterminé que le prix d’un joueur ne reflète pas sa performance. Nous allons désormais créer un Dashboard de visualisation avec l’outil Power BI, qui nous permettra de recommander le top 5 des joueurs par poste.
+After determining that a player’s price does not reflect their actual performance, we will now create a visual dashboard using Power BI to recommend the top 5 players by position.
 
-Nous allons utiliser les données analysées et transformées avec python lors de la partie précédente. Le fichier nommé « df_clean ».
-La première étape est la transformation des données. En effet, sur Power BI, de nombreuses colonnes du fichier sont de types ABC alors que ce sont des valeurs numériques.
-Une transformation des données au format numérique avec virgules doit être faite afin de pouvoir procéder à la transformation. Notons que la variable « minutes » sera en format 123 et non pas en durée car les minutes seront une des bases numériques de notre analyse. Et pourront être additionnées. En football, le raisonnement ne se fait pas en termes d’heures mais de minutes jouées sans les transformer en heures ou autre format temporel.
-Ensuite une vérification sera faite pour déterminer s’il y a des erreurs ou des valeurs manquantes.
-Cette visualisation nous servira à déterminer les joueurs les plus sous-cotés. Le football comportant de nombreux postes différents. Le but est de pouvoir déterminer les joueurs sous-cotés par poste en fonctions des critères les plus pertinents par poste. En effet, un attaquant n’aura pas les mêmes critères de performance qu’un gardien ou défenseur.
-Dans cette visualisation, nous partirons donc d’une visualisation globale, pour ensuite pouvoir entrer dans le détail poste par poste. Le tableau de bord comporte donc 5 pages : 
--	Vue Globale
--	Vue Attaquants
--	Vue Milieux
--	Vue Défenseurs
--	Vue Gardiens
-Chaque page comportera un tableau récapitulatif, qui permettra d’afficher les statistiques essentielles des joueurs dans la catégorie de poste. Et si un joueur est sélectionné sur les différents graphiques, le tableau permettra de visualiser toutes ses statistiques en simultané.
+We will use the dataset that was previously cleaned and analyzed in Python — the df_clean DataFrame.
+The first step involves data transformation, as many columns are recognized as "ABC" (text) in Power BI, even though they contain numeric values.
+We need to convert these columns into numeric format with decimal separators to enable proper analysis.
 
+The “Minutes” column, for example, will be formatted as whole numbers (123), not as time duration.
+In football, time is typically reasoned in minutes played, not in hours, so there's no need to convert this into a time-based format.
 
+We will also check for any errors or missing values during this transformation process.
 
+The dashboard will help us identify the most underrated players.
+Since football includes a wide variety of positions, the goal is to find underrated players within each role, based on the most relevant performance criteria for that position.
+For example, the criteria for evaluating a striker are very different from those for a goalkeeper or defender.
 
+The visualizations will begin with an overall overview, then allow users to drill down into specific positions.
 
+The dashboard will include five separate pages:
+-	The selection
+-	Striker view
+-	Offensive midfielder view
+-	Defensive midfielder view
+-	Fullback view
+-	Centerback view
+-	Goalkeeper view
+
+-	
+Each page will include a summary table displaying the key statistics of players within the selected position category.
+If a player is selected through any of the visual elements (charts, graphs, filters), the table will dynamically update to show all of that player’s relevant statistics simultaneously.
 
 
 
