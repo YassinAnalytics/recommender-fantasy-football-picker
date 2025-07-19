@@ -1,28 +1,23 @@
 # recommender-fantasy-football-picker
 ⚽️ MPG Player Recommender – Fantasy football picks optimizer Built with Python and Power BI to surface undervalued players on Mon Petit Gazon (Premier League):
 
-WIP
-
-
 demo 85s https://www.youtube.com/watch?v=ClSAfk3en2Y
 
 
 demo with explanations https://www.youtube.com/watch?v=CJAY9N-eMJ4
 
 
-##Contexte et objectifs 
+##Context and goals
+
 Mon Petit Gazon (MPG) is a fantasy football game created in 2011. It is played using six European leagues. The goal is to win a championship, called a "league", by building your team through an auction-based transfer market at the beginning of the game.
 During each real-life football matchday, events that happen in actual games (cards, goals, fouls, injuries, etc.) are reflected in the players' performances. Each player receives a rating, and the MPG match is won by the team whose players received the best ratings that day.
-🎯 Project Objective
 
 The goal of this project is to conduct a data analysis to answer the following question:
 "Which underrated players offer the best value for money based on their performance and cost?"
-❓ Why this question?
 
 This topic was chosen because many MPG players tend to buy the same popular players and spend a large portion of their transfer budget on them. However, there are likely many lesser-known or less-hyped players who offer a better price/performance ratio.
 
 This analysis does not take team formations into account, as they depend on each player's strategy.
-🧠 Focus of the study
 
 We will not focus on the most famous or high-profile players, but rather on low-visibility players with strong performance and excellent value.
 The objective is to determine a top 5 players per position that could be recommended to MPG players during the transfer market at the start of the game.
@@ -31,77 +26,53 @@ The objective is to determine a top 5 players per position that could be recomme
 
 
 
-##Cadre
+## Dataset
 
 The dataset used comes from the official MPG statistics website: https://www.mpgstats.fr/, specifically for the Premier League.
-The data is freely downloadable in .xls format. Two versions of the dataset are available (“New Version” and “Old Version”). We chose the Old Version because it is more complete and contains a wider range of data.
+The data is freely downloadable in .xls format. Two versions of the dataset are available (“New Version” and “Old Version”). The Old Version was chosen because it is more complete and contains a wider range of data. For copyright reason, the dataset won't be included.
 
 To ensure relevant statistics and more meaningful trends, only the current season’s data was selected.
 
 In terms of volume, the file contains 124 columns and 532 rows, corresponding to 531 players.
 
 Before processing, the .xls file was converted into a .csv format, which is better suited for the operations and analyses to be performed.
+
+Please note that the dataset is in French. that's why some wording are in french. I translated into english for the analysis etc but the analysis was done initially in french.
+
 🧠 Relevance and Feature Selection
 
 We observed that many columns were either incomplete or irrelevant for the analysis. Therefore, the first step was to decide which variables would be useful to address our research question.
 
 We selected the following 28 columns:
 
-    Joueur (Player)
-
-    Poste (Position)
-
-    Cote (Rating)
-
-    Var cote (Rating Change)
-
-    Enchère moyenne (Average Bid)
-
-    % achat (% Purchased)
-
-    % achat tour 1 (% Purchased Round 1)
-
-    Nombre de matchs (Matches Played)
-
-    But (Goals)
-
-    % titularisation (% Started)
-
-    Temps (Minutes Played)
-
-    Temps moyen (Average Minutes)
-
-    Minute/But (Min per Goal)
-
-    Prix/but (Price per Goal)
-
-    But/Peno (Goals per Penalty)
-
-    Passes décisives (Assists)
-
-    Occasions créées (Chances Created)
-
-    Tirs (Shots)
-
-    Tirs cadrés (Shots on Target)
-
-    Corner gagné (Corners Won)
-
-    Ballons (Touches)
-
-    Interceptions
-
-    Tacles (Tackles)
-
-    %Duel gagnés (% Duels Won)
-
-    Fautes (Fouls)
-
-    Dégagements (Clearances)
-
-    Ballon perdu (Balls Lost)
-
-    Grosse occasion manquée (Big Missed Chances)
+- Joueur (Player)
+- Poste (Position)
+- Cote (Rating)
+- Var cote (Rating Change)
+- Enchère moyenne (Average Bid)
+- % achat (% Purchased)
+- % achat tour 1 (% Purchased Round 1)
+- Nombre de matchs (Matches Played)
+- But (Goals)
+- % titularisation (% Started)
+- Temps (Minutes Played)
+- Temps moyen (Average Minutes)
+- Minute/But (Min per Goal)
+- Prix/but (Price per Goal)
+- But/Peno (Goals per Penalty)
+- Passes décisives (Assists)
+- Occasions créées (Chances Created)
+- Tirs (Shots)
+- Tirs cadrés (Shots on Target)
+- Corner gagné (Corners Won)
+- Ballons (Touches/balls)
+- Interceptions
+- Tacles (Tackles)
+- %Duel gagnés (% Duels Won)
+- Fautes (Fouls)
+- Dégagements (Clearances)
+- Ballon perdu (Balls Lost)
+- Grosse occasion manquée (Big Missed Chances)
 
 ⚽ Contextual Considerations
 
@@ -112,7 +83,7 @@ One of the key variables taken into account for our filtering and analysis is th
 
 
 
-##Pré-processing
+##Pre-processing
 We also had to account for columns containing null values.
 Many columns had missing data, due to various factors such as player position, starting status, or player availability.
 It's also important to consider that not all listed players actually play. In each real matchday, there are only 11 starters and 5 substitutes, meaning a maximum of 16 players per team, or 320 active players total per matchday.
@@ -128,7 +99,7 @@ Finally, all processing was done using a new DataFrame, created from the origina
 This allowed us to preserve the original file and work independently on a cleaned and filtered version.
 
 
-##Visualisations et statistiques
+## Visualisation and statistics
 
 In terms of data distribution, it is first interesting to analyze the distribution of player prices by position using boxplots.
 
@@ -163,11 +134,11 @@ This is especially true for goalkeepers, defenders, and some midfielders and str
 
 These observations confirm the relevance of our research question:
 
- It is not necessary to invest in the most expensive players to achieve strong in-game performance.
+It is not necessary to invest in the most expensive players to achieve strong in-game performance.
 Another interesting variable to analyze is overall performance by position, which will be visualized using boxplots to highlight distributions and trends.
 
 
-•	Gloable performance globale by position :
+•	Global performance by position:
 
  
 We can observe that performance varies widely across all positions.
@@ -188,7 +159,7 @@ Now that we’ve analyzed performance distribution by position, it would be rele
 
 
 
-•	PLaying time vs erformance : 
+•	PLaying time vs erformance: 
 
 <img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/b31f78dd-1ac5-42a1-99ee-009128e2a1c1" />
 
@@ -204,7 +175,7 @@ This will be done by comparing the number of goals and assists against the avera
 
 
 
-•	Goal/assist vs price :
+•	Goal/assist vs price:
 
 <img width="945" height="566" alt="image" src="https://github.com/user-attachments/assets/abd436e9-2781-4ffa-aa1c-bf53defcb84b" />
 
@@ -219,7 +190,7 @@ This raises the question of their defensive efficiency relative to their price, 
 
 
 
-•	Interceptions/price :
+•	Interceptions/price:
 
 <img width="945" height="572" alt="image" src="https://github.com/user-attachments/assets/4b842c6d-d841-4458-a806-b38e713a6de2" />
 Once again, the emerging trend is that a defensive player’s price is not correlated with their defensive performance.
@@ -255,8 +226,8 @@ This is expected: the more a player plays, the more likely they are to accumulat
 
 These findings support our main hypothesis:
 
-  A player's price is not a reliable indicator of their actual performance.
-  Many expensive players underperform compared to cheaper alternatives.
+A player's price is not a reliable indicator of their actual performance.
+Many expensive players underperform compared to cheaper alternatives.
 
 The final objective is to build a Top 5 list of players per position, to be recommended to MPG users.
 This list can help users make more strategic, cost-effective decisions during the transfer market — especially in cases where the best-known or highest-rated players are lost in early bidding rounds.
@@ -343,10 +314,11 @@ The dashboard will include five separate pages:
 -	Centerback view
 -	Goalkeeper view
 
--	
 Each page will include a summary table displaying the key statistics of players within the selected position category.
 If a player is selected through any of the visual elements (charts, graphs, filters), the table will dynamically update to show all of that player’s relevant statistics simultaneously.
 
 
 
-##CODE
+## Additional Files 
+- The PDF file of the PowerBi dashboard.
+- The jupyter notebook
