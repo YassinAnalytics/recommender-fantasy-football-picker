@@ -7,7 +7,7 @@ demo 85s https://www.youtube.com/watch?v=ClSAfk3en2Y
 demo with explanations https://www.youtube.com/watch?v=CJAY9N-eMJ4
 
 
-##Context and goals
+## Context and goals
 
 Mon Petit Gazon (MPG) is a fantasy football game created in 2011. It is played using six European leagues. The goal is to win a championship, called a "league", by building your team through an auction-based transfer market at the beginning of the game.
 During each real-life football matchday, events that happen in actual games (cards, goals, fouls, injuries, etc.) are reflected in the players' performances. Each player receives a rating, and the MPG match is won by the team whose players received the best ratings that day.
