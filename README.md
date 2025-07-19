@@ -161,6 +161,9 @@ Pour en revenir à notre problématique, cela nous permet de comprendre que le p
 
 <img width="945" height="648" alt="image" src="https://github.com/user-attachments/assets/8047ae68-8176-47a0-bd79-717eb0d2df17" />
 
+
+Startting from this, we calculate a score baased on the best metrics for each posiiton that will allow to rank the players
+
 <img width="709" height="450" alt="image" src="https://github.com/user-attachments/assets/3bbb7cd5-606b-4c52-9a13-61f6c0e616a5" />
 
 
