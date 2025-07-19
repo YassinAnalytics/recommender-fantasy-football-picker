@@ -76,7 +76,7 @@ A noter que le traitement des données s’est fait à partir du fichier origina
 Distribution des données 
 En termes de distribution des données, il est intéressant d’analyser tout d’abord la répartition des prix par poste avec des boites à moustaches.
 
- <img width="945" height="600" alt="image" src="https://github.com/user-attachments/assets/a4954a7d-fc0e-44ab-ba4c-c6be026ca6b9" />
+<img width="945" height="563" alt="image" src="https://github.com/user-attachments/assets/eee875e2-fe34-4d79-b7c4-f62e4f6f43a7" />
 
 
 Nous pouvons observer que la répartition des prix par poste est inégale. Les attaquants sont ceux ayant les plus gros écarts. Pour la majorité d’entre eux, les prix sont similaires mais nous pouvons constater quelques valeurs aberrantes qui atteignent des extrêmes pour un très faible nombre de joueurs. Nous pouvons observer une tendance de répartition similaire pour les milieux offensifs. Toutefois avec des écarts moins conséquents. Concernant la défense, nous pouvons observer des écarts plus conséquents pour les centraux que pour les latéraux. Les milieux défensifs et défenseurs centraux sont ceux qui coutent le plus cher.
@@ -85,7 +85,8 @@ Il semblerait qu’en termes de stratégie, les joueurs MPG se basent surtout su
 
 Deux autres variables à étudier sont le rapport prix/ performance avec un graphique de nuage de points.
 •	Rapport prix/performance :
-<img width="945" height="583" alt="image" src="https://github.com/user-attachments/assets/ff4014f2-ab60-41ca-b869-62f93f8f90da" />
+
+<img width="945" height="563" alt="image" src="https://github.com/user-attachments/assets/352a4abc-9e0f-4891-8ac2-77eee0069876" />
 
  
 
@@ -103,13 +104,13 @@ Maintenant que nous connaissons les écarts en termes de performance par poste, 
 
 
 
-<img width="945" height="588" alt="image" src="https://github.com/user-attachments/assets/78e2e8e8-a853-4b58-939a-88e8e740cf50" />
+<img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/fba25312-6e0d-46ad-84c3-1c14185e05c1" />
 
 
 
 •	Temps de jeu/Performance : 
 
- <img width="945" height="566" alt="image" src="https://github.com/user-attachments/assets/feb835c7-64d6-450e-a817-bb82e39a6590" />
+<img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/b31f78dd-1ac5-42a1-99ee-009128e2a1c1" />
 
 
 Nous pouvons observer que le temps de jeu et la performance ne sont pas forcément corrélés. En effet, la tendance est que plus les joueurs jouent et plus ils ont une performance globale croissante. Mais cela dépend des postes. En effet, il faut prendre également en compte, car un remplaçant ayant peu de temps de jeu, peut tout de même avoir une performance très élevée. Car de ce que nous pouvoir voir, c’est que très peu de joueurs jouant beaucoup, ont une performance supérieure à la moyenne des autres. Nous pouvons également observer que les joueurs les plus performants ne sont pas forcément les attaquants mais plutôt les milieux ou défenseurs. En restant sur la performance, il serait intéressant d’étudier l’impact décisif d’un joueur en fonction de son prix. Ceci sera fait en comparant le nombres de buts et de passes décisives en rapport avec le prix d’achat dans un autre graphique nuage de points.
@@ -120,7 +121,7 @@ Nous pouvons observer que le temps de jeu et la performance ne sont pas forcéme
 
 •	Rapport buts/passes décisives et prix :
 
- <img width="945" height="579" alt="image" src="https://github.com/user-attachments/assets/0cec693a-d201-4138-9c63-925711edebdb" />
+<img width="945" height="566" alt="image" src="https://github.com/user-attachments/assets/abd436e9-2781-4ffa-aa1c-bf53defcb84b" />
 
 
 Pour ces variables, la tendance est très claire. Les joueurs les plus décisifs sont des attaquants et milieux offensifs cumulent le plus de buts et de passes décisives. Quelques attaquants se distinguent de par leur prix élevé. Toutefois, un grand nombre de joueurs ayant de bonnes stats ont un prix bas. La conclusion que nous pouvons en tirer et que le rapport efficacité/prix n’est pas corrélé. Nous pouvons voir également qu’un certain nombre de défenseurs sont présents dans les meilleurs buteurs/passeurs. Il serait également intéressant d’observer leur efficacité défensive en fonction de leur prix dans un graphique nuage de points.
@@ -136,7 +137,7 @@ Pour ces variables, la tendance est très claire. Les joueurs les plus décisifs
 
 •	Rapport interceptions/prix :
 
- <img width="945" height="558" alt="image" src="https://github.com/user-attachments/assets/f60c245a-f568-456f-b243-6cc538350b0e" />
+<img width="945" height="572" alt="image" src="https://github.com/user-attachments/assets/4b842c6d-d841-4458-a806-b38e713a6de2" />
 
 
 Là encore, la tendance qui est dégagée est que le prix d’un joueur défensif n’est pas corrélé avec ses prestations défensives. En effet nous pouvons observer que de nombreux joueurs ont un prix relativement faible mais un grand nombre d’interceptions. Et cela indépendamment qu’ils soient centraux ou latéraux.
@@ -152,11 +153,56 @@ Pour vérifier cela, nous allons faire une matrice de corrélation.
 
 •	Matrice de corrélation :
 
- <img width="945" height="815" alt="image" src="https://github.com/user-attachments/assets/d69451d2-432f-4a0e-b1bf-db60fcf6c789" />
+<img width="945" height="842" alt="image" src="https://github.com/user-attachments/assets/14a2cf56-aeac-42ff-ba64-39bfcf624808" />
 
 Cette matrice est très intéressante à observer car il s’en dégage qu’au final très peu de variables sont corrélées entre elles. Les variables prix et performances ne sont pas corrélées significativement.  Beaucoup de variables ne sont pas corrélées ou ont des corrélations négatives. 
 Pour les corrélations positives, cela concerne surtout les statistiques quantitatives comme les interceptions avec le temps, le nombre de duels remportés qui impacte la performance globale, le temps de jeu qui influe sur le nombre de buts, de passes décisives. Ce qui est normal car plus un joueur joue, plus ses statistiques seront élevées.
 Pour en revenir à notre problématique, cela nous permet de comprendre que le prix d’un joueur n’est pas corrélé avec sa performance. Donc de nombreux joueurs chers sont au final moins performants que des joueurs moins onéreux. L’objectif est donc de faire un top 5 des joueurs par poste à recommander aux joueurs MPG. Afin que ces derniers puissent faire un mercato plus stratégique, moins onéreux, ou leur proposer des alternatives si les joueurs les plus performants ou joueurs stars sont perdus aux enchères.
+
+<img width="945" height="648" alt="image" src="https://github.com/user-attachments/assets/8047ae68-8176-47a0-bd79-717eb0d2df17" />
+
+<img width="709" height="450" alt="image" src="https://github.com/user-attachments/assets/3bbb7cd5-606b-4c52-9a13-61f6c0e616a5" />
+
+
+<img width="945" height="287" alt="image" src="https://github.com/user-attachments/assets/2fee7e9a-a6e6-4d3e-aa53-8d3a4df92832" />
+
+<img width="945" height="281" alt="image" src="https://github.com/user-attachments/assets/edb814e3-91b9-45db-ac4f-b5ef52521421" />
+
+
+<img width="945" height="258" alt="image" src="https://github.com/user-attachments/assets/e5e0eca2-eb82-45ea-b642-af22bf09e3f3" />
+
+
+<img width="945" height="263" alt="image" src="https://github.com/user-attachments/assets/34fad9c6-b6c8-42a3-96e5-a4644d8e5fdb" />
+
+
+
+<img width="945" height="240" alt="image" src="https://github.com/user-attachments/assets/9cea720d-145e-4c70-a0ae-8b5e21927e3d" />
+
+
+<img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/db843df9-b9dd-415c-bfb6-30650ef9aa1f" />
+
+Apres fitrage
+<img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/c84b19c7-ceb0-4810-bba5-1dc088e2f10a" />
+
+
+
+<img width="945" height="239" alt="image" src="https://github.com/user-attachments/assets/d666ee52-a161-4e08-8880-ef9cebd1eec9" />
+
+
+<img width="945" height="255" alt="image" src="https://github.com/user-attachments/assets/afc50a10-8d42-4396-a55a-0fe98964dd75" />
+
+
+<img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/8d9ca7e7-c685-427c-9bef-f635d88dbbf3" />
+
+
+<img width="945" height="263" alt="image" src="https://github.com/user-attachments/assets/575d8740-acaa-48c2-94fb-9fb594c92514" />
+
+
+
+<img width="945" height="230" alt="image" src="https://github.com/user-attachments/assets/ab4f0450-38db-46ac-9e35-eca418b86f13" />
+
+
+
 
 
 
