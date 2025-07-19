@@ -334,26 +334,37 @@ The dashboard will include five separate pages:
 Each page will include a summary table displaying the key statistics of players within the selected position category.
 If a player is selected through any of the visual elements (charts, graphs, filters), the table will dynamically update to show all of that player’s relevant statistics simultaneously.
 
-**The selection** 
+**The selection:** 
+
 <img width="945" height="532" alt="image" src="https://github.com/user-attachments/assets/d43631a8-3956-46e0-8b69-c520f7fa16bc" />
 
-**Striker view**
+**Striker view:**
+
 <img width="945" height="528" alt="image" src="https://github.com/user-attachments/assets/da2b1263-d87e-4946-994d-d01ff56082ff" />
 
-**Offensive midfielder view**
+**Offensive midfielder view:**
+
 <img width="945" height="522" alt="image" src="https://github.com/user-attachments/assets/f85939dc-64b9-4012-9c83-62843202bf22" />
 
-**Defensive midfielder view**
+**Defensive midfielder view:**
+
 <img width="945" height="522" alt="image" src="https://github.com/user-attachments/assets/79c04f05-25d3-456b-9d1e-337c8d49a1a8" />
 
-**Fullback view**
+**Fullback view:**
+
 <img width="945" height="524" alt="image" src="https://github.com/user-attachments/assets/1f842f17-3322-4ed0-a3a2-537be426481b" />
 
-**Centerback view**
+**Centerback view:**
+
 <img width="945" height="518" alt="image" src="https://github.com/user-attachments/assets/b9b66e89-af3a-4c6c-af84-5bc51f446dfb" />
 
-**Goalkeeper view**
+**Goalkeeper view:**
+
 <img width="945" height="523" alt="image" src="https://github.com/user-attachments/assets/c09f9aac-bf8c-4bf4-9f42-1a23f007ca2c" />
+
+
+
+Now it's shopping time on the transfert market and good luck!
 
 
 ## Additional Files 
