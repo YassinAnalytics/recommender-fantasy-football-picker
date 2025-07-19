@@ -236,10 +236,12 @@ This list can help users make more strategic, cost-effective decisions during th
 <img width="945" height="648" alt="image" src="https://github.com/user-attachments/assets/8047ae68-8176-47a0-bd79-717eb0d2df17" />
 
 
-With these matrixes by position, we have a clear view
+With these matrixes by position, we have a clear view.
 
-Startting from this, we calculate a score baased on the best metrics for each posiiton that will allow to rank the players
+Starting from this, we calculate a score based on the best metrics for each position that will allow to rank the players.
 
+
+**Before filtering:**
 
 <img width="709" height="450" alt="image" src="https://github.com/user-attachments/assets/3bbb7cd5-606b-4c52-9a13-61f6c0e616a5" />
 
@@ -268,7 +270,8 @@ Startting from this, we calculate a score baased on the best metrics for each po
 <img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/db843df9-b9dd-415c-bfb6-30650ef9aa1f" />
 
 
-Apres fitrage
+**After filtering:**
+
 <img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/c84b19c7-ceb0-4810-bba5-1dc088e2f10a" />
 
 
