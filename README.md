@@ -159,7 +159,7 @@ Now that we’ve analyzed performance distribution by position, it would be rele
 
 
 
-•	PLaying time vs erformance: 
+•	Playing time vs Performance: 
 
 <img width="945" height="529" alt="image" src="https://github.com/user-attachments/assets/b31f78dd-1ac5-42a1-99ee-009128e2a1c1" />
 
@@ -241,7 +241,7 @@ With these matrixes by position, we have a clear view.
 Starting from this, we calculate a score based on the best metrics for each position that will allow to rank the players.
 
 
-**Before filtering:**
+## Before filtering
 
 <img width="709" height="450" alt="image" src="https://github.com/user-attachments/assets/3bbb7cd5-606b-4c52-9a13-61f6c0e616a5" />
 
@@ -270,7 +270,7 @@ Starting from this, we calculate a score based on the best metrics for each posi
 <img width="945" height="245" alt="image" src="https://github.com/user-attachments/assets/db843df9-b9dd-415c-bfb6-30650ef9aa1f" />
 
 
-**After filtering:**
+## After filtering
 
 <img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/c84b19c7-ceb0-4810-bba5-1dc088e2f10a" />
 
