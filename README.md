@@ -39,6 +39,12 @@ Before processing, the .xls file was converted into a .csv format, which is bett
 
 Please note that the dataset is in French. that's why some wording are in french. I translated into english for the analysis etc but the analysis was done initially in french.
 
+## Technologies Used
+- Python (Pandas, Matplotlib, Seaborn)
+- Power BI
+- Jupyter Notebook
+- Excel/CSV
+
 ## Relevance and Feature Selection
 
 We observed that many columns were either incomplete or irrelevant for the analysis. Therefore, the first step was to decide which variables would be useful to address our research question.
