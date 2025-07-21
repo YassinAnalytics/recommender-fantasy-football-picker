@@ -74,7 +74,7 @@ We selected the following 28 columns:
 - Ballons (Touches/balls)
 - Interceptions
 - Tacles (Tackles)
-- %Duel gagnés (% Duels Won)
+- % Duels gagnés (% Duels Won)
 - Fautes (Fouls)
 - Dégagements (Clearances)
 - Ballon perdu (Balls Lost)
