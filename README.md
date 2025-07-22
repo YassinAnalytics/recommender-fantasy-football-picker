@@ -113,7 +113,7 @@ In terms of data distribution, it is first interesting to analyze the distributi
 <img width="945" height="563" alt="image" src="https://github.com/user-attachments/assets/eee875e2-fe34-4d79-b7c4-f62e4f6f43a7" />
 
 We observe that player prices are unevenly distributed across positions.
-Strikers show the widest price range — while most have similar values, a few outliers stand out with extremely high prices, but this concerns only a small number of players.
+Strikers show the widest price range, while most have similar values, a few outliers stand out with extremely high prices, but this concerns only a small number of players.
 
 A similar trend is seen among attacking midfielders, though the disparities are less extreme.
 
@@ -133,7 +133,7 @@ Two other key variables worth analyzing are the relationship between price and p
 
  
 
-When analyzing the relationship between these two variables, we can observe that some players stand out due to their high price — these are mostly strikers, but in many cases, their performance is only average or even below average.
+When analyzing the relationship between these two variables, we can observe that some players stand out due to their high price, these are mostly strikers, but in many cases, their performance is only average or even below average.
 
 On the other hand, many players across all positions have relatively low prices yet deliver strong overall performance.
 This is especially true for goalkeepers, defenders, and some midfielders and strikers.
